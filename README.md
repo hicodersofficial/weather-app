@@ -1,7 +1,7 @@
 # **Weather App**
 
 <div align="center">
-    <b><a href="hweather.netlify.app" target="_blank">
+    <b><a href="https://hweather.netlify.app" target="_blank">
     <img src="public/logo192.png" /> <br />
     Watch Demo
     </a></b>

@@ -1,5 +1,12 @@
 # **Weather App**
 
+<div align="center">
+    <b><a href="hweather.netlify.app" target="_blank">
+    <img src="public/logo192.png" /> <br />
+    Watch Demo
+    </a></b>
+</div>
+
 ## Installation
 
 ```

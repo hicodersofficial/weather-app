@@ -1,38 +1,380 @@
-.App {
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #83838398;
+}
+
+:root {
+  --lef-col-width: 33%;
+  --placeholder-color: #323232;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Poppins", Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.col-left {
+  width: var(--lef-col-width);
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  padding: 4rem;
+}
+
+.col-right {
+  width: calc(100% - var(--lef-col-width));
+  flex: 1;
+  margin-left: var(--lef-col-width);
+  padding: 4rem;
+  background: #f6f6f8;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.input-group .location-icon {
+  font-size: 2rem;
+  color: #323232;
+}
+
+.input-group span {
+  width: 35px;
+  position: absolute;
+  right: 10px;
+  height: 35px;
+  border-radius: 50%;
+  background: #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.input-group .search-icon {
+  position: absolute;
+  left: 10px;
+  color: #909090;
+}
+
+.input-group input {
+  padding: 1.3rem 4rem;
+  font-size: 15px;
+  background: #f8f8f8;
+  text-transform: capitalize;
+  border-radius: 6px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.input-group input::placeholder {
+  font-weight: 500;
+  font-family: "Poppins";
+  color: var(--placeholder-color);
+}
+
+.heading {
+  margin: 3rem 0;
+}
+
+.weather-icon {
+  height: 35%;
+  display: block;
+  margin: 2rem auto;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.temp {
+  font-size: 10rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  display: flex;
+  font-family: "Poppins";
+  font-weight: 300;
+}
+
+.temp span {
+  font-size: 5rem;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.feels-like {
+  margin-top: -3rem;
+  color: #7f7f7f;
+}
+
+.day {
+  font-size: 3rem;
+}
+
+.day span {
+  color: #7f7f7f;
+}
+
+.description {
+  font-size: 2rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.description i {
+  font-size: 3rem;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: #e0e0e0;
+  margin: 2rem 0;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.units {
+  display: flex;
+}
+
+.units span {
+  font-family: "Poppins";
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.units span:nth-child(1) {
+  margin-right: 1rem;
+}
+
+.forecast-container {
+  display: grid;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.highlight-container {
+  display: grid;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.h-card.sun {
+  justify-content: space-evenly;
+}
+
+.h-title {
+  margin-bottom: 1rem;
+}
+
+.sun-info {
+  display: flex;
+  align-items: center;
+}
+
+.sun-info div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.sun-info span {
+  font-size: 1.4rem;
+  color: #7f7f7f;
+}
+.forecast-card {
+  background: #fff;
+  border-radius: 20px;
+  min-width: 150px;
+  align-items: center;
+  height: 20rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.forecast-day {
+  margin-bottom: 1rem;
+}
+.forecast-day span {
+  color: #7f7f7f;
+  font-size: 1.4rem;
+}
+
+.forecast-description {
+  font-size: 1.3rem;
+  color: #7f7f7f;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.minmax-temp span {
+  color: #7f7f7f;
+  margin-left: 1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.h-card {
+  background: #fff;
+  border-radius: 20px;
+  min-width: 150px;
+  align-items: center;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.h-card h1 {
+  font-size: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hl-value {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+.hl-value h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.hl-value span {
+  color: #7f7f7f;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+.city {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --lef-col-width: 25%;
   }
-  to {
-    transform: rotate(360deg);
+  .col-right {
+    padding: 4rem 8rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .forecast-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .day {
+    font-size: 2.3rem;
+  }
+  .col-right {
+    padding: 2rem;
+  }
+  .col-left {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .col-right {
+    padding: 1rem;
+  }
+  .col-left {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .weather-icon {
+    height: 200px;
+    width: 100%;
+  }
+  .input-group {
+    width: 100%;
+  }
+  .forecast-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .highlight-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .feels-like {
+    margin-top: 0;
+  }
+  .col-left {
+    flex-basis: unset;
+    padding: 2rem;
+    position: unset;
+    height: unset;
+    width: 100%;
+    margin: unset;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-right {
+    width: unset;
+    flex: unset;
+    padding: 2rem;
+    background: #f6f6f8;
+    margin: unset;
   }
 }

@@ -14,7 +14,11 @@ $ npm install
 
 Get Your OpenWeatherMap API KEY here: https://home.openweathermap.org/api_keys
 
-Replace API Key with yours **[OPEN_WEATHER_MAP_API_KEY](https://github.com/hicodersofficial/weather-app/blob/main/src/config/config.js)**
+⚠️ **Important Instructions** ⚠️:
+
+- Create `.env` file in root of the project.
+- Copy the variable from [sample.env](https://github.com/hicodersofficial/weather-app/blob/main/sample.env) and paste it into `.env`
+- Change the desired value. _eg_ API Key
 
 ## Preview
 

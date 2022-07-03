@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const date = new Date();
     const hour = date.getHours();
-    if (hour > 17 || hour < 7) {
+    if (hour > 18 || hour < 7) {
       dispatchApp({ type: "DARK", payload: true });
     }
   }, []);
@@ -55,7 +55,17 @@ function App() {
           .format(new Date(data.current.dt * 1000))
           .replace(/[A-Za-z]/gi, "")
       );
-      if (localTime > 17 || localTime < 7) {
+      const sunset = parseInt(
+        formatter
+          .format(new Date(data.current.sunset * 1000))
+          .replace(/[A-Za-z]/gi, "")
+      );
+      const sunrise = parseInt(
+        formatter
+          .format(new Date(data.current.sunrise * 1000))
+          .replace(/[A-Za-z]/gi, "")
+      );
+      if (localTime > sunset || localTime < sunrise) {
         dispatchApp({ type: "DARK", payload: true });
       } else {
         dispatchApp({ type: "DARK", payload: false });

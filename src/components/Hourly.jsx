@@ -14,12 +14,21 @@ function Hourly() {
     return <Loader />;
   }
   const { hourly } = weather;
-  const width = window.innerWidth;
   return (
     <div>
       <Swiper
         spaceBetween={20}
-        slidesPerView={width > 600 ? (width < 900 ? 3 : 4) : 2}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          700: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: 4,
+          },
+        }}
       >
         {hourly.map((hWeather, index) => {
           const date = new Date(hWeather.dt * 1000);

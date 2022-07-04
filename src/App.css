@@ -301,6 +301,38 @@ img {
   margin: 2rem 0;
 }
 
+.loader {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.loader .spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-top: 4px solid #e720f3;
+  border-right: 4px solid #f85731;
+  border-left: 4px solid #76fa56;
+  border-bottom: 4px solid #ffc548;
+  animation: loader 0.7s linear infinite;
+}
+
+.loader-text {
+  font-size: 1.9rem;
+  margin-top: 1rem;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (min-width: 1200px) {
   :root {
     --lef-col-width: 25%;
@@ -332,6 +364,29 @@ img {
   }
   .col-left {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .forecast-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .highlight-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .description {
+    font-size: 1.8rem;
+  }
+  .description i {
+    font-size: 2rem;
+  }
+  .day {
+    font-size: 1.8rem;
+  }
+  .city {
+    font-size: 1.8rem;
   }
 }
 

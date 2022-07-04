@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import AppContext from "../provider/appContext";
 import Card from "./Card";
+import Loader from "./Loader";
 import Temperature from "./Temperature";
 
 function Forecast() {
   const { app } = useContext(AppContext);
   if (!app.weather) {
-    return <>Loading...</>;
+    return <Loader />;
   }
 
   const { daily } = app.weather;

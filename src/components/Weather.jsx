@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../provider/appContext";
+import Loader from "./Loader";
 import Temperature from "./Temperature";
 
 function Weather() {
@@ -9,7 +10,7 @@ function Weather() {
   } = useContext(AppContext);
 
   if (!weather) {
-    return <>Loading...</>;
+    return <Loader showText={true} height="40vh" />;
   }
 
   const { current } = weather;

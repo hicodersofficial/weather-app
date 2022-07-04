@@ -4,13 +4,14 @@ import "swiper/css";
 import AppContext from "../provider/appContext";
 import Temperature from "./Temperature";
 import Card from "./Card";
+import Loader from "./Loader";
 
 function Hourly() {
   const {
     app: { weather },
   } = useContext(AppContext);
   if (!weather) {
-    return <>Loading...</>;
+    return <Loader />;
   }
   const { hourly } = weather;
   const width = window.innerWidth;

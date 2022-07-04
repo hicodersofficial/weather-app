@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import AppContext from "../provider/appContext";
 import Card from "./Card";
+import Loader from "./Loader";
 
 function Highlights() {
   const {
@@ -8,7 +9,7 @@ function Highlights() {
   } = useContext(AppContext);
 
   if (!weather) {
-    return <>Loading...</>;
+    return <Loader />;
   }
   const { current } = weather;
   const formatter = Intl.DateTimeFormat([], {

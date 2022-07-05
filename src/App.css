@@ -327,6 +327,29 @@ img {
   margin-top: 1rem;
 }
 
+.footer {
+  display: flex;
+  padding-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  color: #4a4a4a;
+  transition: all 0.3s;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}
+
+.footer a span {
+  margin-left: 0.4rem;
+}
+
 @keyframes loader {
   to {
     transform: rotate(360deg);

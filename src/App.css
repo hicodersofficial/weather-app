@@ -9,6 +9,7 @@
 :root {
   --lef-col-width: 33%;
   --placeholder-color: #323232;
+  --swiper-navigation-size: 30px !important;
 }
 
 * {
@@ -348,6 +349,13 @@ img {
 
 .footer a span {
   margin-left: 0.4rem;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after,
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  color: #7f7f7f;
 }
 
 @keyframes loader {

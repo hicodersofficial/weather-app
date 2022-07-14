@@ -1,6 +1,11 @@
 import React, { useContext } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+
 import "swiper/css";
+import "swiper/css/navigation";
+
 import AppContext from "../provider/appContext";
 import Temperature from "./Temperature";
 import Card from "./Card";
@@ -18,6 +23,8 @@ function Hourly() {
     <div>
       <Swiper
         spaceBetween={20}
+        navigation={true}
+        modules={[Navigation]}
         breakpoints={{
           0: {
             slidesPerView: 2,

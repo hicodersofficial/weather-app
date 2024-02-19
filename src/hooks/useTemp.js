@@ -6,9 +6,8 @@ function useTemp(temp, toFixed = 0) {
     app: { unit },
   } = useContext(AppContext);
 
-  if (unit.toLowerCase() === "f") {
-    return ((temp * 9) / 5 + 32).toFixed(toFixed);
-  }
+const celciusTOfarenheit = ((temp*9)/5+32).toFixed(toFixed);
+  unit.toLowerCase()==="f" ? return celciusTOfarenheit: ;
 
   return parseFloat(temp).toFixed(toFixed);
 }

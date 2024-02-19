@@ -31,9 +31,9 @@ function Forecast() {
               {weather.weather[0].description}
             </div>
             <div className="minmax-temp">
-              <Temperature temperature={weather.temp.max} />°
+              <Temperature temperature={weather.temp.max} />°F
               <span>
-                <Temperature temperature={weather.temp.min} />°
+                <Temperature temperature={weather.temp.min} />°C
               </span>
             </div>
           </Card>
